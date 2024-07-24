@@ -3,11 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Menu - Faça A Sua Escolha</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <!-- HOME -->
+    <header>
+      <img src="assets/home.jpg" alt="home" />
+      <h1 class="title">Menu - Faça A Sua Escolha</h1>
+    </header>
+
+    <!-- MENU -->
+    <main>
+      <!-- Prato Principal -->
+      <section>
+        <h2 class="subtitle">Prato Principal</h2>
+        <h3 class="text">
+          Todos os pratos acompanham arroz, feijão e a sobremesa do dia.
+        </h3>
+        <!-- CARDÁPIO -->
+        <div class="images">
+          <!-- PRATO-ESCOLHA -->
+          <div class="card">
+            <img src="assets/bife.jpg" alt="bife" class="picture" />
+            <h3 class="text">Bife com batata</h3>
+            <h3 class="preco">R$ 30,00</h3>
+            <div class="quantity">
+              <button type="button">-</button>
+              <p>0</p>
+              <button type="button">+</button>
+            </div>
+          </div>
+          <!-- PRATO-ESCOLHA -->
+          <div class="card">
+            <img src="assets/coxa.jpg" alt="coxa" class="picture" />
+            <h3 class="text">Coxa de Frango Crocante</h3>
+            <h3 class="preco">R$ 25,00</h3>
+            <div class="quantity">
+              <button type="button">-</button>
+              <p>0</p>
+              <button type="button">+</button>
+            </div>
+          </div>
+          <!-- PRATO-ESCOLHA -->
+          <div class="card">
+            <img src="assets/panela.jpg" alt="panela" class="picture" />
+            <h3 class="text">Carne de Panela</h3>
+            <h3 class="preco">R$ 22,00</h3>
+            <div class="quantity">
+              <button type="button">-</button>
+              <p>0</p>
+              <button type="button">+</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Acompanhamentos -->
+      <section>
+        <h2 class="subtitle">Acompanhamentos</h2>
+        <h3 class="text">Porções para uma pessoa.</h3>
+        <!-- CARDÁPIO -->
+        <div class="images">
+          <!-- PRATO-ESCOLHA -->
+          <div class="card">
+            <img src="assets/farofa.jpg" alt="farofa" class="picture" />
+            <h3 class="text">Farofa</h3>
+            <h3 class="preco">R$ 10,00</h3>
+            <div class="quantity">
+              <button type="button">-</button>
+              <p>0</p>
+              <button type="button">+</button>
+            </div>
+          </div>
+          <!-- PRATO-ESCOLHA -->
+          <div class="card">
+            <img src="assets/salad.jpg" alt="salada" class="picture" />
+            <h3 class="text">Salada</h3>
+            <h3 class="preco">R$ 8,00</h3>
+            <div class="quantity">
+              <button type="button">-</button>
+              <p>0</p>
+              <button type="button">+</button>
+            </div>
+          </div>
+          <!-- PRATO-ESCOLHA -->
+          <div class="card">
+            <img src="assets/torresmo.jpg" alt="torresmo" class="picture" />
+            <h3 class="text">Torresmo</h3>
+            <h3 class="preco">R$ 12,00</h3>
+            <div class="quantity">
+              <button type="button">-</button>
+              <p>0</p>
+              <button type="button">+</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Dados do Cliente -->
+      <section class="clientData">
+        <h2 class="subtitle">Dados Pessoais</h2>
+        <input
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="Digite o seu nome"
+        />
+        <input
+          type="tel"
+          name="telefone"
+          id="telefone"
+          placeholder="Digite o seu telefone"
+        />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Digite o seu email"
+        />
+      </section>
+      <!-- Botão Calcular -->
+      <button type="button">Calcular</button>
+    </main>
     <footer></footer>
+    <script src="script.js"></script>
   </body>
 </html>
