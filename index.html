@@ -33,11 +33,24 @@
               />
               <h3 class="text">Bife com batata</h3>
               <h3 class="preco">R$ 30,00</h3>
-              <div class="quantity">
-                <button type="button">-</button>
-                <p>0</p>
-                <button type="button">+</button>
-              </div>
+              <form class="quantity btn-add">
+                <input type="button" class="minus" value="-" />
+                <input
+                  type="number"
+                  step="1"
+                  min="0"
+                  max=""
+                  id="1"
+                  name="quantity"
+                  value="0"
+                  title="Qty"
+                  class="input-text qty text"
+                  size="4"
+                  pattern=""
+                  inputmode=""
+                />
+                <input type="button" class="plus" value="+" />
+              </form>
             </article>
             <!-- PRATO-ESCOLHA -->
             <article class="card">
@@ -48,11 +61,24 @@
               />
               <h3 class="text">Coxa de Frango Crocante</h3>
               <h3 class="preco">R$ 25,00</h3>
-              <div class="quantity">
-                <button type="button">-</button>
-                <p>0</p>
-                <button type="button">+</button>
-              </div>
+              <form class="quantity btn-add">
+                <input type="button" class="minus" value="-" />
+                <input
+                  type="number"
+                  step="1"
+                  min="0"
+                  max=""
+                  id="2"
+                  name="quantity"
+                  value="0"
+                  title="Qty"
+                  class="input-text qty text"
+                  size="4"
+                  pattern=""
+                  inputmode=""
+                />
+                <input type="button" class="plus" value="+" />
+              </form>
             </article>
             <!-- PRATO-ESCOLHA -->
             <article class="card">
@@ -63,11 +89,24 @@
               />
               <h3 class="text">Carne de Panela</h3>
               <h3 class="preco">R$ 22,00</h3>
-              <div class="quantity">
-                <button type="button">-</button>
-                <p>0</p>
-                <button type="button">+</button>
-              </div>
+              <form class="quantity btn-add">
+                <input type="button" class="minus" value="-" />
+                <input
+                  type="number"
+                  step="1"
+                  min="0"
+                  max=""
+                  id="3"
+                  name="quantity"
+                  value="0"
+                  title="Qty"
+                  class="input-text qty text"
+                  size="4"
+                  pattern=""
+                  inputmode=""
+                />
+                <input type="button" class="plus" value="+" />
+              </form>
             </article>
           </div>
         </section>
@@ -82,63 +121,122 @@
               <img src="assets/farofa.jpg" alt="Farofa" class="picture" />
               <h3 class="text">Farofa</h3>
               <h3 class="preco">R$ 10,00</h3>
-              <div class="quantity">
-                <button type="button">-</button>
-                <p>0</p>
-                <button type="button">+</button>
-              </div>
+              <form class="quantity btn-add">
+                <input type="button" class="minus" value="-" />
+                <input
+                  type="number"
+                  step="1"
+                  min="0"
+                  max=""
+                  id="4"
+                  name="quantity"
+                  value="0"
+                  title="Qty"
+                  class="input-text qty text"
+                  size="4"
+                  pattern=""
+                  inputmode=""
+                />
+                <input type="button" class="plus" value="+" />
+              </form>
             </article>
             <!-- PRATO-ESCOLHA -->
             <article class="card">
               <img src="assets/salad.jpg" alt="Salada" class="picture" />
               <h3 class="text">Salada</h3>
               <h3 class="preco">R$ 8,00</h3>
-              <div class="quantity">
-                <button type="button">-</button>
-                <p>0</p>
-                <button type="button">+</button>
-              </div>
+              <form class="quantity btn-add">
+                <input type="button" class="minus" value="-" />
+                <input
+                  type="number"
+                  step="1"
+                  min="0"
+                  max=""
+                  id="5"
+                  name="quantity"
+                  value="0"
+                  title="Qty"
+                  class="input-text qty text"
+                  size="4"
+                  pattern=""
+                  inputmode=""
+                />
+                <input type="button" class="plus" value="+" />
+              </form>
             </article>
             <!-- PRATO-ESCOLHA -->
             <article class="card">
               <img src="assets/torresmo.jpg" alt="Torresmo" class="picture" />
               <h3 class="text">Torresmo</h3>
               <h3 class="preco">R$ 12,00</h3>
-              <div class="quantity">
-                <button type="button">-</button>
-                <p>0</p>
-                <button type="button">+</button>
-              </div>
+              <form class="quantity btn-add">
+                <input type="button" class="minus" value="-" />
+                <input
+                  type="number"
+                  step="1"
+                  min="0"
+                  max=""
+                  id="6"
+                  name="quantity"
+                  value="0"
+                  title="Qty"
+                  class="input-text qty text"
+                  size="4"
+                  pattern=""
+                  inputmode=""
+                />
+                <input type="button" class="plus" value="+" />
+              </form>
             </article>
           </div>
         </section>
+
         <!-- Dados do Cliente -->
         <section class="clientData">
           <h2 class="text">Dados Pessoais</h2>
-          <input
-            type="text"
-            name="nome"
-            id="nome"
-            placeholder="Digite o seu nome"
-          />
-          <input
-            type="tel"
-            name="telefone"
-            id="telefone"
-            placeholder="Digite o seu telefone"
-          />
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Digite o seu email"
-          />
+          <form>
+            <input
+              type="text"
+              name="name"
+              id="inName"
+              placeholder="Digite o seu nome"
+            />
+            <input
+              type="text"
+              name="phone"
+              id="inPhone"
+              placeholder="Digite o seu telefone"
+            />
+            <input
+              type="email"
+              name="email"
+              id="inMail"
+              placeholder="Digite o seu e-mail"
+            />
+          </form>
         </section>
         <!-- Botão Calcular -->
-        <button class="btn-calc" type="button">Calcular</button>
+        <input
+          type="button"
+          value="Calcular"
+          class="btn-calc"
+          onclick="calcularPedido()"
+        />
       </main>
-      <footer></footer>
+      <footer>
+        <p class="resp1"></p>
+        <p class="resp2"></p>
+        <p class="resp3"></p>
+        <h5 class="resp4"></h5>
+      </footer>
     </div>
-    <script src="script.js"></script>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      $("#inPhone").mask("(00) 0 0000-0000");
+      $(".money").mask("000.000.000.000.000,00", { reverse: true });
+    </script>
   </body>
 </html>

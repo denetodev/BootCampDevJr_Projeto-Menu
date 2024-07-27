@@ -3,11 +3,11 @@
   --light-gray: #e7e7e7;
   --medium-gray: #afafaf;
   --shadow-gray: #888888a4;
-  --orange: #ff8800;
   --green: #169132;
   --blue: #007bff;
   --light-blue: #439eff;
   --black: #000000;
+  --focus-shadow: 0px 2px 5px var(--shadow-gray);
 }
 
 body {
@@ -55,13 +55,15 @@ section {
 }
 
 .title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  color: var(--black);
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 700;
+  color: var(--black);
 }
 
 .images {
@@ -72,9 +74,10 @@ section {
 }
 
 .text {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 700;
   margin: 2px 0;
+  color: var(--black);
 }
 
 .preco {
@@ -87,10 +90,16 @@ section {
   flex-direction: column;
   align-items: center;
   margin: 10px 0;
-  padding: 8px;
+  padding: 15px;
   border-radius: 10px;
   box-shadow: 0px 3px 10px 3px var(--shadow-gray);
   background-color: var(--white);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px 3px var(--shadow-gray);
 }
 
 .picture {
@@ -108,25 +117,55 @@ section {
   margin: 5px 0 0;
 }
 
-.quantity button,
+.quantity input[type="button"],
 .btn-calc {
-  padding: 8px;
+  padding: 10px;
   border: none;
   background-color: var(--blue);
   color: var(--white);
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-button:hover,
+.quantity .input-text.qty.text {
+  width: 35px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  text-align: center; /* Centraliza o texto */
+  border: none; /* Remove a borda */
+  outline: none;
+}
+
+.quantity .value {
+  padding: 0 10px;
+  font-size: 16px;
+  color: var(--black);
+}
+
+input[type="button"]:hover,
 .btn-calc:hover {
   background-color: var(--light-blue);
 }
 
-button:focus,
-input:focus {
-  box-shadow: 0px 2px 5px var(--shadow-gray);
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+  border: 1px solid var(--medium-gray);
+  margin: 10px 0;
+  padding: 10px;
+  width: calc(100% - 22px);
+  border-radius: 5px;
   outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
+  border-color: var(--blue);
+  box-shadow: var(--focus-shadow);
 }
 
 .clientData {
@@ -134,25 +173,86 @@ input:focus {
   margin-bottom: 15px;
 }
 
-input {
-  border: none;
-  margin: 10px;
-  padding: 8px;
+.btn-calc {
   width: 100%;
-  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* teste */
+
+.quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.quantity .input-text.qty {
+  width: 35px;
+  height: 39px;
+  padding: 0 5px;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #efefef;
+}
+
+.quantity.btn-add {
+  text-align: left;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.quantity.btn-add input {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+  box-shadow: none;
+}
+
+.quantity.btn-add .minus,
+.quantity.btn-add .plus {
+  padding: 8px 10px;
+  height: 35px;
+  width: 30px;
+  background-color: var(--blue);
+  border: none;
+}
+
+.quantity.btn-add .minus {
+  border-right: 0;
+}
+
+.quantity.btn-add .plus {
+  border-left: 0;
+}
+
+.quantity.btn-add .minus:hover,
+.quantity.btn-add .plus:hover {
+  background: var(--light-blue);
+}
+
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity.btn-add .minus:focus,
+.quantity.btn-add .plus:focus {
   outline: none;
 }
 
-.btn-calc {
-  width: 100%;
-  font-size: 0.7rem;
-  font-weight: 600;
+footer {
+  text-align: left;
 }
 
-/* Media Query para Resposividade */
+/* Media Query para Responsividade */
 @media (max-width: 600px) {
   .container {
     width: 90%;
+    padding: 15px;
   }
 
   section {
@@ -160,15 +260,11 @@ input {
   }
 
   .card {
-    width: 65%;
-  }
-
-  .text {
-    font-size: 0rem;
+    width: 80%;
   }
 
   .btn-calc {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .picture {
