@@ -8,9 +8,10 @@ var prods = [
   { id: 6, nome: "Torresmo", preco: 12.0 },
 ];
 
+//interação com os Inputs
 function calcularPedido() {
   var quantities = document.querySelectorAll(".quantity");
-  var nomeCliente = document.querySelector("#inName").value; // Obter o valor do campo de entrada
+  var nomeCliente = document.querySelector("#inName").value;
   var respNome = document.querySelector(".resp1");
   var dadosPedido = document.querySelector(".resp2");
   var respPedido = document.querySelector(".resp3");
@@ -19,15 +20,15 @@ function calcularPedido() {
 
   // Limpar os conteúdos anteriores
   respNome.innerHTML = "";
+  dadosPedido.innerHTML = "";
   respPedido.innerHTML = "";
 
   // Adicionar o nome do cliente
   respNome.innerHTML = `Caro(a) <strong>${nomeCliente}</strong>,`;
-  dadosPedido.innerHTML = `</br>
-Seguem os dados do seu pedido.
-</br></br>
-O seu pedido é:
-</br></br>`;
+  // Texto do pedido
+  dadosPedido.innerHTML = `</br>Seguem os dados do seu pedido.</br></br>O seu pedido é:</br></br>`;
+
+  //Calcular Quantidade
   quantities.forEach((form) => {
     var id = form.querySelector(".input-text").id;
     var quantidade = parseInt(form.querySelector(".input-text").value, 10) || 0;
@@ -44,13 +45,13 @@ O seu pedido é:
       total += prato.preco * quantidade;
     }
   });
-  // Mostrar o total
 
+  // Mostrar o Valor Total do Pedido
   var formatter = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
   });
-  precoFinal.innerHTML = `<h2>Preço Final: R$ ${formatter.format(
+  precoFinal.innerHTML = `<h2>Preço Final: ${formatter.format(
     total.toFixed(2)
   )}</h2>`;
 }
