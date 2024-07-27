@@ -46,8 +46,7 @@ O seu pedido é:
   });
 
   // Mostrar o total
-    respPe
-    dido.innerHTML += `<h2>Preço Final: R$ ${total.toFixed(2)}</h2>`;
+  precoFinal.innerHTML += `<h2>Preço Final: R$ ${total.toFixed(2)}</h2>`;
 }
 
 // Adicionar eventos após o DOM estar carregado
