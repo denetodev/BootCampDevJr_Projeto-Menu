@@ -27,7 +27,7 @@ function calcularPedido() {
 Seguem os dados do seu pedido.
 </br></br>
 O seu pedido é:
-</br>`;
+</br></br>`;
   quantities.forEach((form) => {
     var id = form.querySelector(".input-text").id;
     var quantidade = parseInt(form.querySelector(".input-text").value, 10) || 0;
@@ -44,9 +44,15 @@ O seu pedido é:
       total += prato.preco * quantidade;
     }
   });
-
   // Mostrar o total
-  precoFinal.innerHTML += `<h2>Preço Final: R$ ${total.toFixed(2)}</h2>`;
+
+  var formatter = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+  precoFinal.innerHTML = `<h2>Preço Final: R$ ${formatter.format(
+    total.toFixed(2)
+  )}</h2>`;
 }
 
 // Adicionar eventos após o DOM estar carregado

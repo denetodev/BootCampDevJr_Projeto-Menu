@@ -244,8 +244,20 @@ input[type="email"]:focus {
   outline: none;
 }
 
-footer {
+footer>p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 400;
   text-align: left;
+}
+
+.resp3 {
+  font-size: small;
+  font-weight: 500;
+}
+
+.resp4{
+  font-size: medium;
+  color: var(--green);
 }
 
 /* Media Query para Responsividade */
