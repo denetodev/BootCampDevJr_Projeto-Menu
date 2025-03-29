@@ -7,228 +7,207 @@
     <title>Menu - Faça A Sua Escolha</title>
   </head>
   <body>
-    <!-- CONTAINER -->
     <div class="container">
-      <!-- HOME -->
       <header>
-        <img src="assets/home.jpg" alt="Imagem da página inicial" />
-        <h1 class="title">Menu - Faça A Sua Escolha</h1>
-      </header>
-      <!-- MENU -->
-      <main>
-        <!-- Prato Principal -->
-        <section>
-          <h2 class="subtitle">Prato Principal</h2>
-          <h3 class="text">
-            Todos os pratos acompanham arroz, feijão e a sobremesa do dia.
-          </h3>
-          <!-- CARDÁPIO -->
-          <div class="images">
-            <!-- PRATO-ESCOLHA -->
-            <article class="card">
-              <img
-                src="assets/bife.jpg"
-                alt="Bife com batata"
-                class="picture"
-              />
-              <h3 class="text">Bife com batata</h3>
-              <h3 class="preco">R$ 30,00</h3>
-              <form class="quantity btn-add">
-                <input type="button" class="minus" value="-" />
-                <input
-                  type="number"
-                  step="1"
-                  min="0"
-                  max=""
-                  id="1"
-                  name="quantity"
-                  value="0"
-                  title="Qty"
-                  class="input-text qty text"
-                  size="4"
-                  pattern=""
-                  inputmode=""
-                />
-                <input type="button" class="plus" value="+" />
-              </form>
-            </article>
-            <!-- PRATO-ESCOLHA -->
-            <article class="card">
-              <img
-                src="assets/coxa.jpg"
-                alt="Coxa de Frango Crocante"
-                class="picture"
-              />
-              <h3 class="text">Coxa de Frango Crocante</h3>
-              <h3 class="preco">R$ 25,00</h3>
-              <form class="quantity btn-add">
-                <input type="button" class="minus" value="-" />
-                <input
-                  type="number"
-                  step="1"
-                  min="0"
-                  max=""
-                  id="2"
-                  name="quantity"
-                  value="0"
-                  title="Qty"
-                  class="input-text qty text"
-                  size="4"
-                  pattern=""
-                  inputmode=""
-                />
-                <input type="button" class="plus" value="+" />
-              </form>
-            </article>
-            <!-- PRATO-ESCOLHA -->
-            <article class="card">
-              <img
-                src="assets/panela.jpg"
-                alt="Carne de Panela"
-                class="picture"
-              />
-              <h3 class="text">Carne de Panela</h3>
-              <h3 class="preco">R$ 22,00</h3>
-              <form class="quantity btn-add">
-                <input type="button" class="minus" value="-" />
-                <input
-                  type="number"
-                  step="1"
-                  min="0"
-                  max=""
-                  id="3"
-                  name="quantity"
-                  value="0"
-                  title="Qty"
-                  class="input-text qty text"
-                  size="4"
-                  pattern=""
-                  inputmode=""
-                />
-                <input type="button" class="plus" value="+" />
-              </form>
-            </article>
-          </div>
-        </section>
-        <!-- Acompanhamentos -->
-        <section>
-          <h2 class="subtitle">Acompanhamentos</h2>
-          <h3 class="text">Porções para uma pessoa.</h3>
-          <!-- CARDÁPIO -->
-          <div class="images">
-            <!-- PRATO-ESCOLHA -->
-            <article class="card">
-              <img src="assets/farofa.jpg" alt="Farofa" class="picture" />
-              <h3 class="text">Farofa</h3>
-              <h3 class="preco">R$ 10,00</h3>
-              <form class="quantity btn-add">
-                <input type="button" class="minus" value="-" />
-                <input
-                  type="number"
-                  step="1"
-                  min="0"
-                  max=""
-                  id="4"
-                  name="quantity"
-                  value="0"
-                  title="Qty"
-                  class="input-text qty text"
-                  size="4"
-                  pattern=""
-                  inputmode=""
-                />
-                <input type="button" class="plus" value="+" />
-              </form>
-            </article>
-            <!-- PRATO-ESCOLHA -->
-            <article class="card">
-              <img src="assets/salad.jpg" alt="Salada" class="picture" />
-              <h3 class="text">Salada</h3>
-              <h3 class="preco">R$ 8,00</h3>
-              <form class="quantity btn-add">
-                <input type="button" class="minus" value="-" />
-                <input
-                  type="number"
-                  step="1"
-                  min="0"
-                  max=""
-                  id="5"
-                  name="quantity"
-                  value="0"
-                  title="Qty"
-                  class="input-text qty text"
-                  size="4"
-                  pattern=""
-                  inputmode=""
-                />
-                <input type="button" class="plus" value="+" />
-              </form>
-            </article>
-            <!-- PRATO-ESCOLHA -->
-            <article class="card">
-              <img src="assets/torresmo.jpg" alt="Torresmo" class="picture" />
-              <h3 class="text">Torresmo</h3>
-              <h3 class="preco">R$ 12,00</h3>
-              <form class="quantity btn-add">
-                <input type="button" class="minus" value="-" />
-                <input
-                  type="number"
-                  step="1"
-                  min="0"
-                  max=""
-                  id="6"
-                  name="quantity"
-                  value="0"
-                  title="Qty"
-                  class="input-text qty text"
-                  size="4"
-                  pattern=""
-                  inputmode=""
-                />
-                <input type="button" class="plus" value="+" />
-              </form>
-            </article>
-          </div>
-        </section>
-
-        <!-- Dados do Cliente -->
-        <section class="clientData">
-          <h2 class="text">Dados Pessoais</h2>
-          <form>
-            <input
-              type="text"
-              name="name"
-              id="inName"
-              placeholder="Digite o seu nome"
-            />
-            <input
-              type="text"
-              name="phone"
-              id="inPhone"
-              placeholder="Digite o seu telefone"
-            />
-            <input
-              type="email"
-              name="email"
-              id="inMail"
-              placeholder="Digite o seu e-mail"
-            />
-          </form>
-        </section>
-        <!-- Botão Calcular -->
-        <input
-          type="button"
-          value="Calcular"
-          class="btn-calc"
-          onclick="calcularPedido()"
+        <img
+          src="assets/home.jpg"
+          alt="Imagem da página inicial"
+          class="header-image"
         />
-      </main>
-      <footer>
-        <p class="resp1"></p>
-        <p class="resp2"></p>
-        <p class="resp3"></p>
-        <h6 class="resp4"></h6>
-      </footer>
+        <div class="header-content">
+          <h1 class="title">Menu - Faça A Sua Escolha</h1>
+          <p>Sabor e qualidade para todos os gostos</p>
+        </div>
+      </header>
+
+      <section class="menu-section">
+        <h2 class="subtitle">Prato Principal</h2>
+        <p class="category-description">
+          Todos os pratos acompanham arroz, feijão e a sobremesa do dia.
+        </p>
+
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="badge">Popular</div>
+            <img
+              src="assets/bife.jpg"
+              alt="Bife com batata"
+              class="menu-item-image"
+            />
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">Bife com batata</h3>
+              <div class="menu-item-price">R$ 30,00</div>
+              <div class="quantity-control">
+                <button class="quantity-btn minus" data-id="1">-</button>
+                <input
+                  type="number"
+                  min="0"
+                  id="1"
+                  value="0"
+                  class="quantity-input"
+                  readonly
+                />
+                <button class="quantity-btn plus" data-id="1">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img
+              src="assets/coxa.jpg"
+              alt="Coxa de Frango Crocante"
+              class="menu-item-image"
+            />
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">Coxa de Frango Crocante</h3>
+              <div class="menu-item-price">R$ 25,00</div>
+              <div class="quantity-control">
+                <button class="quantity-btn minus" data-id="2">-</button>
+                <input
+                  type="number"
+                  min="0"
+                  id="2"
+                  value="0"
+                  class="quantity-input"
+                  readonly
+                />
+                <button class="quantity-btn plus" data-id="2">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img
+              src="assets/panela.jpg"
+              alt="Carne de Panela"
+              class="menu-item-image"
+            />
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">Carne de Panela</h3>
+              <div class="menu-item-price">R$ 22,00</div>
+              <div class="quantity-control">
+                <button class="quantity-btn minus" data-id="3">-</button>
+                <input
+                  type="number"
+                  min="0"
+                  id="3"
+                  value="0"
+                  class="quantity-input"
+                  readonly
+                />
+                <button class="quantity-btn plus" data-id="3">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section">
+        <h2 class="subtitle">Acompanhamentos</h2>
+        <p class="category-description">Porções para uma pessoa.</p>
+
+        <div class="menu-grid">
+          <div class="menu-item">
+            <img src="assets/farofa.jpg" alt="Farofa" class="menu-item-image" />
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">Farofa</h3>
+              <div class="menu-item-price">R$ 10,00</div>
+              <div class="quantity-control">
+                <button class="quantity-btn minus" data-id="4">-</button>
+                <input
+                  type="number"
+                  min="0"
+                  id="4"
+                  value="0"
+                  class="quantity-input"
+                  readonly
+                />
+                <button class="quantity-btn plus" data-id="4">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="assets/salad.jpg" alt="Salada" class="menu-item-image" />
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">Salada</h3>
+              <div class="menu-item-price">R$ 8,00</div>
+              <div class="quantity-control">
+                <button class="quantity-btn minus" data-id="5">-</button>
+                <input
+                  type="number"
+                  min="0"
+                  id="5"
+                  value="0"
+                  class="quantity-input"
+                  readonly
+                />
+                <button class="quantity-btn plus" data-id="5">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="badge">Novo</div>
+            <img
+              src="assets/torresmo.jpg"
+              alt="Torresmo"
+              class="menu-item-image"
+            />
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">Torresmo</h3>
+              <div class="menu-item-price">R$ 12,00</div>
+              <div class="quantity-control">
+                <button class="quantity-btn minus" data-id="6">-</button>
+                <input
+                  type="number"
+                  min="0"
+                  id="6"
+                  value="0"
+                  class="quantity-input"
+                  readonly
+                />
+                <button class="quantity-btn plus" data-id="6">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="client-section">
+        <h2 class="section-title">Seus Dados</h2>
+        <div class="client-form">
+          <input
+            type="text"
+            id="inName"
+            placeholder="Digite o seu nome"
+            class="form-input"
+          />
+          <input
+            type="text"
+            id="inPhone"
+            placeholder="Digite o seu telefone"
+            class="form-input"
+          />
+          <input
+            type="email"
+            id="inMail"
+            placeholder="Digite o seu e-mail"
+            class="form-input"
+          />
+        </div>
+        <button class="btn-calculate" onclick="calcularPedido()">
+          Finalizar Pedido
+        </button>
+      </section>
+
+      <div id="orderSummary" class="order-summary">
+        <h2 class="section-title">Resumo do Pedido</h2>
+        <p id="summaryGreeting" class="summary-greeting"></p>
+        <p class="summary-intro">Seguem os detalhes do seu pedido:</p>
+        <ul id="summaryItems" class="summary-items"></ul>
+        <div id="summaryTotal" class="summary-total"></div>
+      </div>
     </div>
 
     <script src="js/jquery-3.7.1.min.js"></script>

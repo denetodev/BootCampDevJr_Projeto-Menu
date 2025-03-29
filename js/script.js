@@ -8,76 +8,115 @@ var prods = [
   { id: 6, nome: "Torresmo", preco: 12.0 },
 ];
 
-//interação com os Inputs
+// Formatador de moeda
+const formatter = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: "BRL",
+});
+
+// Função para calcular o pedido
 function calcularPedido() {
-  var quantities = document.querySelectorAll(".quantity");
-  var nomeCliente = document.querySelector("#inName").value;
-  var respNome = document.querySelector(".resp1");
-  var dadosPedido = document.querySelector(".resp2");
-  var respPedido = document.querySelector(".resp3");
-  var precoFinal = document.querySelector(".resp4");
-  var total = 0;
+  const nomeCliente = document.querySelector("#inName").value;
 
-  // Limpar os conteúdos anteriores
-  respNome.innerHTML = "";
-  dadosPedido.innerHTML = "";
-  respPedido.innerHTML = "";
+  if (!nomeCliente) {
+    alert("Por favor, preencha seu nome antes de finalizar o pedido.");
+    return;
+  }
 
-  // Adicionar o nome do cliente
-  respNome.innerHTML = `Caro(a) <strong>${nomeCliente}</strong>,`;
-  // Texto do pedido
-  dadosPedido.innerHTML = `</br>Seguem os dados do seu pedido.</br></br>O seu pedido é:</br></br>`;
+  let temProduto = false;
+  let totalPedido = 0;
+  const itensPedido = [];
 
-  //Calcular Quantidade
-  quantities.forEach((form) => {
-    var id = form.querySelector(".input-text").id;
-    var quantidade = parseInt(form.querySelector(".input-text").value, 10) || 0;
-    var prato = prods.find((p) => p.id == id);
+  // Verificar os produtos selecionados
+  document.querySelectorAll(".quantity-input").forEach((input) => {
+    const id = input.id;
+    const quantidade = parseInt(input.value);
 
-    if (prato && quantidade > 0) {
-      respPedido.innerHTML += `<li>Prato: ${
-        prato.nome
-      } - Preço unitário: R$ ${prato.preco.toFixed(
-        2
-      )} - Quantidade: ${quantidade} - Total: R$ ${(
-        quantidade * prato.preco
-      ).toFixed(2)}</li></br>`;
-      total += prato.preco * quantidade;
+    if (quantidade > 0) {
+      temProduto = true;
+      const produto = prods.find((p) => p.id == id);
+      const subtotal = produto.preco * quantidade;
+      totalPedido += subtotal;
+
+      itensPedido.push({
+        nome: produto.nome,
+        preco: produto.preco,
+        quantidade: quantidade,
+        subtotal: subtotal,
+      });
     }
   });
 
-  // Mostrar o Valor Total do Pedido
-  var formatter = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  });
-  precoFinal.innerHTML = `<h2>Preço Final: ${formatter.format(
-    total.toFixed(2)
-  )}</h2>`;
-}
-
-// Adicionar eventos após o DOM estar carregado
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector(".btn-calc").addEventListener("click", calcularPedido);
-
-  // Função para atualizar a quantidade
-  function updateQuantity(element, delta) {
-    const input = element.parentElement.querySelector(".input-text");
-    let quantidade = parseInt(input.value, 10);
-    quantidade = Math.max(0, quantidade + delta); // Não permitir quantidade negativa
-    input.value = quantidade;
+  if (!temProduto) {
+    alert("Por favor, selecione pelo menos um item para seu pedido.");
+    return;
   }
 
-  // Adicionar eventos de clique aos botões "+" e "-"
-  document.querySelectorAll(".minus").forEach((button) => {
+  // Exibir o resumo do pedido
+  const summaryGreeting = document.getElementById("summaryGreeting");
+  const summaryItems = document.getElementById("summaryItems");
+  const summaryTotal = document.getElementById("summaryTotal");
+  const orderSummary = document.getElementById("orderSummary");
+
+  // Limpar o conteúdo anterior
+  summaryGreeting.textContent = "";
+  summaryItems.innerHTML = "";
+
+  // Adicionar a saudação
+  summaryGreeting.textContent = `Olá, ${nomeCliente}!`;
+
+  // Adicionar os itens do pedido
+  itensPedido.forEach((item) => {
+    const li = document.createElement("li");
+    li.className = "summary-item";
+    li.innerHTML = `
+            <div class="summary-item-details">
+              <span class="summary-item-name">${item.nome}</span>
+              <span class="summary-item-price">${formatter.format(
+                item.preco
+              )} × ${item.quantidade}</span>
+            </div>
+            <span class="summary-item-total">${formatter.format(
+              item.subtotal
+            )}</span>
+          `;
+    summaryItems.appendChild(li);
+  });
+
+  // Adicionar o total
+  summaryTotal.textContent = `Total: ${formatter.format(totalPedido)}`;
+
+  // Mostrar o resumo com animação
+  orderSummary.classList.add("visible");
+
+  // Rolar até o resumo
+  orderSummary.scrollIntoView({ behavior: "smooth" });
+}
+
+// Evento para os botões de quantidade
+document.addEventListener("DOMContentLoaded", function () {
+  // Mascarar o campo de telefone
+  $("#inPhone").mask("(00) 0 0000-0000");
+
+  // Adicionar eventos aos botões de quantidade
+  document.querySelectorAll(".minus, .plus").forEach((button) => {
     button.addEventListener("click", function () {
-      updateQuantity(this, -1);
+      const id = this.getAttribute("data-id");
+      const input = document.getElementById(id);
+      let value = parseInt(input.value);
+
+      if (this.classList.contains("plus")) {
+        value++;
+      } else if (this.classList.contains("minus") && value > 0) {
+        value--;
+      }
+
+      input.value = value;
     });
   });
 
-  document.querySelectorAll(".plus").forEach((button) => {
-    button.addEventListener("click", function () {
-      updateQuantity(this, 1);
-    });
-  });
+  // Evento para o botão de finalizar pedido
+  document
+    .querySelector(".btn-calculate")
+    .addEventListener("click", calcularPedido);
 });
